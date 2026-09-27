@@ -1,0 +1,21 @@
+{
+  "name": "LockstepArena.Client.Demo",
+  "rootNamespace": "LockstepArena.Client.Demo",
+  "references": [
+    "LockstepArena.Client.LiveTcp",
+    "LockstepArena.Protocol",
+    "LockstepArena.Simulation",
+    "LockstepArena.StreamFraming"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "Google.Protobuf.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

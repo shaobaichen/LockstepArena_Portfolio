@@ -1,0 +1,13 @@
+{
+  "name": "com.locksteparena.client-live-tcp",
+  "version": "0.1.0",
+  "displayName": "Lockstep Arena Client Live TCP",
+  "description": "Minimal live TCP client battle runtime with bounded prediction.",
+  "unity": "6000.3",
+  "dependencies": {
+    "com.locksteparena.client-prediction": "0.1.0",
+    "com.locksteparena.protocol": "0.1.0",
+    "com.locksteparena.simulation": "0.1.0",
+    "com.locksteparena.stream-framing": "0.1.0"
+  }
+}

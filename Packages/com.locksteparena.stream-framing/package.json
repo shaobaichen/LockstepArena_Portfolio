@@ -1,0 +1,7 @@
+{
+  "name": "com.locksteparena.stream-framing",
+  "version": "0.1.0",
+  "displayName": "Lockstep Arena Stream Framing",
+  "description": "Dependency-free length-prefixed byte-stream framing shared by Unity and .NET.",
+  "unity": "6000.3"
+}

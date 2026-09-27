@@ -1,0 +1,10 @@
+{
+  "name": "com.locksteparena.client-prediction",
+  "version": "0.1.0",
+  "displayName": "Lockstep Arena Client Prediction",
+  "description": "Offline bounded client prediction and authoritative reconciliation.",
+  "unity": "6000.3",
+  "dependencies": {
+    "com.locksteparena.simulation": "0.1.0"
+  }
+}

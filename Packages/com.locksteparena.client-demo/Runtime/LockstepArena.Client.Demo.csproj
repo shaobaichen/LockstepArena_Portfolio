@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <BuildInParallel>false</BuildInParallel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.36.0" />
+    <ProjectReference Include="..\..\com.locksteparena.client-live-tcp\Runtime\LockstepArena.Client.LiveTcp.csproj" />
+    <ProjectReference Include="..\..\com.locksteparena.protocol\Runtime\LockstepArena.Protocol.csproj" />
+    <ProjectReference Include="..\..\com.locksteparena.simulation\Runtime\LockstepArena.Simulation.csproj" />
+    <ProjectReference Include="..\..\com.locksteparena.stream-framing\Runtime\LockstepArena.StreamFraming.csproj" />
+  </ItemGroup>
+</Project>

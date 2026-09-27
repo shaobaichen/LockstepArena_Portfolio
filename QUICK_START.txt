@@ -1,0 +1,36 @@
+LOCKSTEP ARENA - WINDOWS x64
+
+Keep this entire folder together. No Unity or .NET SDK is required.
+
+HOST
+1. Start LockstepArena.exe.
+2. Choose CREATE LAN.
+3. Enter nickname and room name; create the room.
+4. Share your active LAN IPv4 with the guest.
+
+CLIENT
+1. Start LockstepArena.exe.
+2. Choose JOIN LAN.
+3. Enter a different nickname and Host IPv4.
+4. Select and join the room.
+5. Both players READY.
+6. Host START.
+
+On one PC, run two copies and use 127.0.0.1.
+If Windows Firewall asks, allow Private Network access.
+Host TCP ports 46000 and 46001 must be available.
+
+CONTROLS
+WASD        Move
+Mouse       Aim
+Left Mouse  Fire (hold)
+F1          Diagnostics
+
+REPLAY (after verified match result)
+WATCH REPLAY starts authoritative offline playback.
+SPACE       Pause / Resume
+ESC         Return to result
+Completed replay holds until BACK TO RESULT.
+RETURN TO LOBBY is a separate result action.
+
+See THIRD_PARTY_LICENSES.txt and Server runtime notices.

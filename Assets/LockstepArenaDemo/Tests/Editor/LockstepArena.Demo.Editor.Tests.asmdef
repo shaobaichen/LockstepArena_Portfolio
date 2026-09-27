@@ -1,0 +1,26 @@
+{
+  "name": "LockstepArena.Demo.Editor.Tests",
+  "rootNamespace": "LockstepArena.Demo.Editor.Tests",
+  "references": [
+    "LockstepArena.Demo",
+    "LockstepArena.Client.Demo",
+    "LockstepArena.Client.LiveTcp",
+    "LockstepArena.Simulation",
+    "Unity.TextMeshPro",
+    "UnityEngine.UI"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

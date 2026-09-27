@@ -1,0 +1,189 @@
+syntax = "proto3";
+
+package locksteparena.protocol;
+
+option csharp_namespace = "LockstepArena.Protocol.Wire";
+
+message RosterEntryMessage {
+  uint32 player_slot = 1;
+  uint64 player_id = 2;
+}
+
+message ActiveRosterMessage {
+  repeated RosterEntryMessage players = 1;
+}
+
+message InputFrameMessage {
+  uint32 tick = 1;
+  uint32 player_slot = 2;
+  sint32 move_x = 3;
+  sint32 move_z = 4;
+  uint32 aim = 5;
+  bool fire = 6;
+}
+
+message PlayerInputSubmissionMessage {
+  uint64 submitted_player_id = 1;
+  InputFrameMessage input = 2;
+}
+
+message AuthoritativeFrameMessage {
+  uint32 tick = 1;
+  ActiveRosterMessage roster = 2;
+  repeated InputFrameMessage inputs = 3;
+}
+
+message ClientControlCommandMessage {
+  oneof command {
+    EnterSessionCommandMessage enter_session = 1;
+    RequestRoomListCommandMessage request_room_list = 2;
+    CreateRoomCommandMessage create_room = 3;
+    JoinRoomCommandMessage join_room = 4;
+    LeaveRoomCommandMessage leave_room = 5;
+    SetReadyCommandMessage set_ready = 6;
+    StartBattleCommandMessage start_battle = 7;
+    ReturnToLobbyCommandMessage return_to_lobby = 8;
+    ExitSessionCommandMessage exit_session = 9;
+    BattleReadyCommandMessage battle_ready = 10;
+  }
+}
+
+message EnterSessionCommandMessage { string nickname = 1; }
+message RequestRoomListCommandMessage {}
+message CreateRoomCommandMessage { string room_name = 1; uint32 capacity = 2; }
+message JoinRoomCommandMessage { uint64 room_id = 1; }
+message LeaveRoomCommandMessage {}
+message SetReadyCommandMessage { bool is_ready = 1; }
+message StartBattleCommandMessage {}
+message ReturnToLobbyCommandMessage {}
+message ExitSessionCommandMessage {}
+message BattleReadyCommandMessage {
+  uint64 battle_id = 1;
+  fixed64 battle_config_hash = 2;
+}
+
+message ServerControlEventMessage {
+  oneof event {
+    SessionEnteredEventMessage session_entered = 1;
+    RoomListEventMessage room_list = 2;
+    RoomSnapshotEventMessage room_snapshot = 3;
+    BattlePreparingEventMessage battle_preparing = 4;
+    BattleStartedEventMessage battle_started = 5;
+    BattleStatusEventMessage battle_status = 6;
+    BattleSettlementEventMessage battle_settlement = 7;
+    CommandRejectedEventMessage command_rejected = 8;
+    LobbyEnteredEventMessage lobby_entered = 9;
+  }
+}
+
+enum RoomLifecycleMessage {
+  ROOM_LIFECYCLE_UNSPECIFIED = 0;
+  ROOM_LIFECYCLE_OPEN = 1;
+  ROOM_LIFECYCLE_PREPARING_BATTLE = 2;
+  ROOM_LIFECYCLE_IN_BATTLE = 3;
+  ROOM_LIFECYCLE_SETTLED = 4;
+}
+
+message SessionEnteredEventMessage { uint64 session_id = 1; string nickname = 2; }
+message RoomSummaryMessage {
+  uint64 room_id = 1;
+  string room_name = 2;
+  string host_nickname = 3;
+  uint32 participant_count = 4;
+  uint32 capacity = 5;
+  RoomLifecycleMessage lifecycle = 6;
+}
+message RoomListEventMessage { repeated RoomSummaryMessage rooms = 1; }
+message RoomParticipantMessage {
+  uint64 session_id = 1;
+  string nickname = 2;
+  bool is_host = 3;
+  bool is_ready = 4;
+  uint32 join_ordinal = 5;
+}
+message RoomSnapshotEventMessage {
+  uint64 room_id = 1;
+  string room_name = 2;
+  uint64 host_session_id = 3;
+  uint32 capacity = 4;
+  RoomLifecycleMessage lifecycle = 5;
+  repeated RoomParticipantMessage participants = 6;
+}
+
+message InitialPlayerStateMessage {
+  uint32 player_slot = 1;
+  sint32 position_x = 2;
+  sint32 position_z = 3;
+  uint32 aim = 4;
+}
+message BattleBootstrapMessage {
+  uint64 battle_id = 1;
+  ActiveRosterMessage roster = 2;
+  repeated InitialPlayerStateMessage player_states = 3;
+  uint32 initial_tick = 4;
+  uint32 battle_duration_ticks = 5;
+  uint32 input_delay_ticks = 6;
+  uint32 final_state_tick = 7;
+  fixed64 battle_config_hash = 8;
+}
+message BattlePreparingEventMessage {
+  uint64 room_id = 1;
+  uint64 battle_id = 2;
+  bytes battle_ticket = 3;
+  uint32 battle_port = 4;
+  uint64 local_player_id = 5;
+  uint32 local_player_slot = 6;
+  BattleBootstrapMessage bootstrap = 7;
+}
+message BattleStartedEventMessage { uint64 battle_id = 1; }
+message BattleStatusEventMessage {
+  uint64 battle_id = 1;
+  uint32 server_state_tick = 2;
+  uint32 next_publish_tick = 3;
+}
+
+enum BattleSettlementReasonMessage {
+  BATTLE_SETTLEMENT_REASON_UNSPECIFIED = 0;
+  BATTLE_SETTLEMENT_REASON_TICK_LIMIT_REACHED = 1;
+  BATTLE_SETTLEMENT_REASON_ABORTED = 2;
+  BATTLE_SETTLEMENT_REASON_MATCH_COMPLETED = 3;
+  BATTLE_SETTLEMENT_REASON_DISCONNECT_FORFEIT = 4;
+}
+message SettlementPlayerStateMessage {
+  uint32 player_slot = 1;
+  uint64 player_id = 2;
+  sint32 position_x = 3;
+  sint32 position_z = 4;
+  uint32 aim = 5;
+}
+message FinalBattleStateMessage {
+  uint32 tick = 1;
+  fixed64 state_digest = 2;
+  repeated SettlementPlayerStateMessage player_states = 3;
+}
+message BattleSettlementEventMessage {
+  uint64 battle_id = 1;
+  BattleSettlementReasonMessage reason = 2;
+  FinalBattleStateMessage final_state = 3;
+  string detail = 4;
+  uint64 winner_player_id = 5;
+  uint32 slot0_round_wins = 6;
+  uint32 slot1_round_wins = 7;
+}
+
+enum ControlRejectReasonMessage {
+  CONTROL_REJECT_REASON_UNSPECIFIED = 0;
+  CONTROL_REJECT_REASON_INVALID_PHASE = 1;
+  CONTROL_REJECT_REASON_INVALID_VALUE = 2;
+  CONTROL_REJECT_REASON_NICKNAME_IN_USE = 3;
+  CONTROL_REJECT_REASON_ROOM_NOT_FOUND = 4;
+  CONTROL_REJECT_REASON_ROOM_FULL = 5;
+  CONTROL_REJECT_REASON_NOT_HOST = 6;
+  CONTROL_REJECT_REASON_NOT_READY = 7;
+  CONTROL_REJECT_REASON_RESOURCE_LIMIT = 8;
+}
+message CommandRejectedEventMessage {
+  ControlRejectReasonMessage reason = 1;
+  string detail = 2;
+}
+message LobbyEnteredEventMessage {}

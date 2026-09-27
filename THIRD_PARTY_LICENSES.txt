@@ -1,0 +1,30 @@
+# Third-party licenses used by Lockstep Arena
+
+This file records the selected third-party assets and runtime components shipped or referenced by the project. The project code remains under its repository license; these notices do not relicense it.
+
+## Art and audio
+
+- Robot Character — Styloo, https://styloo.itch.io/robot-character — CC0 as stated by the author.
+- Modular SciFi MegaKit (Standard) — Quaternius, https://quaternius.com/ — CC0/public-domain dedication; the original `License_Standard.txt` is retained beside the source assets.
+- Sci-fi Gun Pack — Quaternius, https://quaternius.com/ — CC0/public-domain dedication; the original pack license is retained beside the source asset.
+- Kenney UI Pack: Space Expansion — Kenney, https://kenney.nl/assets/ui-pack-space-expansion — CC0.
+- Kenney Particle Pack — Kenney, https://kenney.nl/assets/particle-pack — CC0.
+- Kenney Digital Audio / Impact / Sci-Fi / UI sounds — Kenney, https://kenney.nl/assets — CC0.
+
+The original pack license files remain in `Assets/Art/` and are copied into a Windows demo's source/notice closure as applicable. Kenney attribution is optional under CC0; it is listed here for clarity.
+
+## Liberation Sans
+
+The embedded TextMesh Pro font is distributed under the SIL Open Font License 1.1. The complete copyright and license text is retained at `Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt`; a Windows demo package includes the same file as `THIRD_PARTY-LiberationSans-OFL.txt`.
+
+Copyright (c) 2010 Google Corporation with Reserved Font Arimo, Tinos and Cousine. Copyright (c) 2012 Red Hat, Inc. with Reserved Font Name Liberation.
+
+## Google.Protobuf
+
+`Google.Protobuf 3.36.0` is used under the BSD 3-Clause License. The complete notice and license text is retained in `Packages/com.locksteparena.protocol/Third Party Notices.md` and is included in a Windows demo as `THIRD_PARTY-GoogleProtobuf-BSD-3-Clause.txt`.
+
+Copyright 2015 Google Inc. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the copyright notice, conditions, and disclaimer are retained. Neither the name of Google nor its contributors may be used to endorse derived products without permission. The software is provided without warranty; Google and contributors are not liable for damages.
+
+## .NET runtime
+
+The self-contained DemoHost includes Microsoft .NET 8 runtime files. The original runtime notices are copied with the package as `Server/DOTNET-LICENSE.txt` and `Server/DOTNET-THIRD-PARTY-NOTICES.txt` from the installed `Microsoft.NETCore.App.Runtime.win-x64` package. Those notices govern the bundled runtime, not the Lockstep Arena source.

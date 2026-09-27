@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <BuildInParallel>false</BuildInParallel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Assets\LockstepArenaDemo\Runtime\Replay\BattleReplayPlayer.cs" Link="BattleReplayPlayer.cs" Condition="Exists('..\..\Assets\LockstepArenaDemo\Runtime\Replay\BattleReplayPlayer.cs')" />
+    <Compile Include="..\..\Assets\LockstepArenaDemo\Runtime\Presentation\LockstepDiagnosticsFormatter.cs" Link="LockstepDiagnosticsFormatter.cs" Condition="Exists('..\..\Assets\LockstepArenaDemo\Runtime\Presentation\LockstepDiagnosticsFormatter.cs')" />
+    <ProjectReference Include="..\..\Server\LockstepArena.Server.DemoHost\LockstepArena.Server.DemoHost.csproj" />
+    <ProjectReference Include="..\..\Packages\com.locksteparena.client-demo\Runtime\LockstepArena.Client.Demo.csproj" />
+    <ProjectReference Include="..\..\Packages\com.locksteparena.protocol\Runtime\LockstepArena.Protocol.csproj" />
+    <ProjectReference Include="..\..\Packages\com.locksteparena.simulation\Runtime\LockstepArena.Simulation.csproj" />
+  </ItemGroup>
+</Project>

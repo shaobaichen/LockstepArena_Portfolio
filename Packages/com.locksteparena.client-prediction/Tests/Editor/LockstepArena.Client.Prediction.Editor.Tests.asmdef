@@ -1,0 +1,17 @@
+{
+  "name": "LockstepArena.Client.Prediction.Editor.Tests",
+  "references": [
+    "LockstepArena.Client.Prediction",
+    "LockstepArena.Simulation"
+  ],
+  "includePlatforms": ["Editor"],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": ["TestAssemblies"]
+}

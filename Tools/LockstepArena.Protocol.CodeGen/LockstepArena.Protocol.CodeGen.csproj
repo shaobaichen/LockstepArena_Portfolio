@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Protobuf_NoWarnMissingExpected>true</Protobuf_NoWarnMissingExpected>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.Tools" Version="2.83.0" PrivateAssets="all" GeneratePathProperty="true" />
+    <Protobuf Include="..\..\Packages\com.locksteparena.protocol\Schema\lockstep_arena_protocol.proto"
+              ProtoRoot="..\..\Packages\com.locksteparena.protocol\Schema"
+              OutputDir="..\..\Packages\com.locksteparena.protocol\Runtime\Generated"
+              GrpcServices="None"
+              CompileOutputs="false"
+              OutputOptions="file_extension=.g.cs" />
+  </ItemGroup>
+</Project>

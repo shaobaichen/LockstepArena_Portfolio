@@ -1,0 +1,16 @@
+{
+  "name": "LockstepArena.Client.Prediction",
+  "rootNamespace": "LockstepArena.Client.Prediction",
+  "references": [
+    "LockstepArena.Simulation"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

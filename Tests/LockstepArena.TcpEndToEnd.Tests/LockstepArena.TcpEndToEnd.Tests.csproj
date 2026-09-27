@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <BuildInParallel>false</BuildInParallel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Packages\com.locksteparena.stream-framing\Runtime\LockstepArena.StreamFraming.csproj" />
+    <ProjectReference Include="..\..\Server\LockstepArena.Server.ProtocolAuthority\LockstepArena.Server.ProtocolAuthority.csproj" />
+    <ProjectReference Include="..\..\Packages\com.locksteparena.protocol\Runtime\LockstepArena.Protocol.csproj" />
+    <ProjectReference Include="..\..\Packages\com.locksteparena.simulation\Runtime\LockstepArena.Simulation.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+{
+  "name": "LockstepArena.Simulation.Editor.Tests",
+  "rootNamespace": "LockstepArena.Simulation.Editor.Tests",
+  "references": [
+    "LockstepArena.Simulation"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ebfd3f00cc9d74b8a671cb234b057e, type: 3}
+  m_Name: V3BBattlePresentationCatalog
+  m_EditorClassIdentifier: LockstepArena.Demo::LockstepArena.Demo.BattlePresentationCatalog
+  RobotPrefab: {fileID: 5524387210104004850, guid: 463d7d9948f95224eb6eb39970f64b00, type: 3}
+  WeaponPrefab: {fileID: 919132149155446097, guid: 2edfae2e1a4e9cf469fbd1f0d0b11ced, type: 3}
+  PlatformPrefab: {fileID: 919132149155446097, guid: a35226873af0a044fbd24a49da345acf, type: 3}
+  DoorFramePrefab: {fileID: 919132149155446097, guid: 8017547c945adef49b94f4a9690182ff, type: 3}
+  ColumnPrefab: {fileID: 919132149155446097, guid: 0e0aa77fe1975254d95e1d545a7fbaa6, type: 3}
+  ComputerPrefab: {fileID: 919132149155446097, guid: 725adfa92f430db45a44bd5c50a43abf, type: 3}
+  CratePrefab: {fileID: 919132149155446097, guid: adff8bbea906bec4e8f73c0141b67b2a, type: 3}
+  IdleClip: {fileID: 103933099099671182, guid: 909e22769ac7d244b8abe37778f9f6b4, type: 3}
+  RunClip: {fileID: 7168293901883076996, guid: 909e22769ac7d244b8abe37778f9f6b4, type: 3}
+  ShootClip: {fileID: -6713671711208555067, guid: 909e22769ac7d244b8abe37778f9f6b4, type: 3}
+  RobotMaterial: {fileID: 2100000, guid: ba5d43b8a105b134bb7526e08594f2e0, type: 2}
+  WeaponMaterial: {fileID: 2100000, guid: 905f011088a56ba4f8a85fb5f406ae32, type: 2}
+  FloorMaterial: {fileID: 2100000, guid: 1486cf00059214641a35c4961d4d094a, type: 2}
+  WallMaterial: {fileID: 2100000, guid: 9e97de0a2550a654a95a604d236fdbbc, type: 2}
+  CoverMaterial: {fileID: 2100000, guid: 764bbdd500e87af45bc0d0dd4d8d33d5, type: 2}
+  CyanMaterial: {fileID: 2100000, guid: 6b26afccfb0b44049940c896b62f7a8c, type: 2}
+  RedMaterial: {fileID: 2100000, guid: 2f64eb4e2478f5e468251efbb04d968c, type: 2}
+  ProjectileMaterial: {fileID: 2100000, guid: b3a1354b8cb082840ba84e64acc16c77, type: 2}
+  MuzzleMaterial: {fileID: 2100000, guid: a79e3e7b3e0c8774e93a2a16a2b1b340, type: 2}
+  ParticleMaterial: {fileID: 2100000, guid: 58a40b2758044d84faefcae3de6fbb25, type: 2}
+  PanelSprite: {fileID: 21300000, guid: 126e55e8f66cd314ba263ed143c006de, type: 3}
+  ButtonSprite: {fileID: 21300000, guid: 82f94b90804edee4e80d1720a3bd6b99, type: 3}
+  Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  ShootSound: {fileID: 8300000, guid: 8924c1f0934bb2d419886c34080e3691, type: 3}
+  PlayerHitSound: {fileID: 8300000, guid: e3733b973696d0044a6baa74f1f0c508, type: 3}
+  EnvironmentHitSound: {fileID: 8300000, guid: 6419930f419938f429b5e73369382761, type: 3}
+  DeathSound: {fileID: 8300000, guid: 6860a281a187b854bb51cfaa219c3150, type: 3}
+  CountdownSound: {fileID: 8300000, guid: c9843155e6012d94a8b6c4dc3056d3ac, type: 3}
+  FightSound: {fileID: 8300000, guid: d96b9111f973cef4e97bb6dd19e74265, type: 3}
+  VictorySound: {fileID: 8300000, guid: ae2e784e1ec052344b79ede057cac160, type: 3}
+  ClickSound: {fileID: 8300000, guid: 58b0227ab514a7741b5c3b3c4302082f, type: 3}
+  AmbientSound: {fileID: 8300000, guid: 97363b166029de744a0d609a40697440, type: 3}
