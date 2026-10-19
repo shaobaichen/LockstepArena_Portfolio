@@ -1,51 +1,53 @@
-# Quick Start
+# 快速开始（Quick Start）
 
-## Play the Windows demo
+## 运行 Windows 演示版
 
-Keep the whole `LockstepArena-Windows-x64` folder together. No Unity, Visual Studio, or .NET SDK is required.
+请保留完整的 `LockstepArena-Windows-x64` 文件夹。普通玩家无需安装 Unity、Visual Studio 或 .NET SDK。
 
-### Host
+### 房主（Host）
 
-1. Launch `LockstepArena.exe`.
-2. Choose Create LAN, enter a nickname and room name, then create the room.
-3. Share the displayed host IPv4 with the guest. The bundled server starts automatically.
+1. 运行 `LockstepArena.exe`。
+2. 选择 **Create LAN**，输入昵称和房间名称，创建房间。
+3. 将画面显示的**房主 IPv4 地址**告诉另一名玩家；程序会自动启动发行包中的服务器。
 
-### Guest
+### 加入者（Guest）
 
-1. Launch `LockstepArena.exe`.
-2. Choose Join LAN, enter a different nickname and the host's IPv4.
-3. Select the room and join.
-4. Both players choose Ready; the host chooses Start.
+1. 运行另一份 `LockstepArena.exe`。
+2. 选择 **Join LAN**，输入与房主不同的昵称和房主 IPv4 地址。
+3. 从房间列表选择目标房间并加入。
+4. 两名玩家均点击 **Ready**，再由房主点击 **Start**。
 
-On one PC, run two copies and use `127.0.0.1`. On different PCs, use the active LAN adapter's IPv4, not the guest's address or a disconnected VPN adapter. If Windows Firewall asks, allow Private Network access. This demo is intended for a trusted private LAN.
+同一台电脑上可以运行两份客户端，连接时使用 `127.0.0.1`。两台电脑联机时，应填写**房主当前正在使用的局域网网卡 IPv4**，而不是加入者的地址或已断开 VPN 网卡的地址。Windows 防火墙弹出提示时，允许**专用网络（Private Network）**访问。当前 Demo 面向可信任的私有局域网使用。
 
-## Controls
+## 游戏操作
 
-| Key | Action |
+| 按键 | 作用 |
 | --- | --- |
-| WASD | Move |
-| Mouse | Aim |
-| Held left mouse | Fire |
-| F1 | Show/hide diagnostics |
-| Space in replay | Pause/resume |
-| Escape in replay | Return to result |
+| WASD | 移动 |
+| 鼠标 | 瞄准 |
+| 按住鼠标左键 | 开火 |
+| F1 | 显示/隐藏帧同步诊断面板 |
+| 回放中按 Space | 暂停/继续回放 |
+| 回放中按 Escape | 返回结算界面 |
 
-Win two rounds to finish the match. After verified settlement, Watch Replay re-simulates authoritative inputs offline. Replay can be watched repeatedly. Completion holds the final frame until Back To Result; Return To Lobby is a separate result action.
+先赢得 **2 回合**的玩家取得整场胜利。完成经过验证的结算后，选择 **Watch Replay** 可以在离线模拟中重演权威输入帧。可重复观看；回放结束时会保持最后一帧，直到点击 **Back To Result**。`Return To Lobby` 是结算界面的另一项独立操作。
 
-## Build from source
+## 从源码构建
 
-Use Unity `6000.3.10f1` and .NET SDK `8.0.419`. Open the saved LobbyScene, close game clients, and select **Lockstep Arena → Build v3-A Windows Player**. The current build appears under `.artifacts/V3APlayer/`, including `Server/`. Do not regenerate presentation assets to build a manually adjusted scene.
+开发环境使用 Unity `6000.3.10f1` 和 .NET SDK `8.0.419`。在 Unity 中打开已保存的 `LobbyScene`，关闭运行中的游戏客户端，然后选择 **Lockstep Arena → Build v3-A Windows Player**。
 
-See [Testing](TESTING.md) for automatic and manual checks.
+当前构建产物位于 `.artifacts/V3APlayer/`，其中包含 `Server/`。**不要为了构建而重新生成表现层资源**，以免覆盖经过手动调整的场景。
 
-## Troubleshooting
+自动化与人工测试步骤见 [测试与验收](TESTING.md)。
 
-- **Data folder not found:** copy/rebuild the complete output; `LockstepArena_Data` must sit next to the executable. Do not mix files from different builds.
-- **Port conflict/server startup error:** ports 46000 and 46001 must be free on the host. Close your known old host/server first. Create LAN does not silently reuse an unknown listener or kill a manually started server.
-- **Cannot connect:** check the host's active IPv4 and Private Network firewall permissions for Player and server. Do not expose these ports to the public Internet.
-- **Start unavailable:** both slots must be occupied and both players Ready; only the host can start.
-- **Watch Replay unavailable:** complete a match and wait for verified settlement. Aborted/unverified matches are not offered as verified replays.
-- **Battle time stalls:** authority requires both players' input. Keep both clients running; background pumping is enabled, but a missing/disconnected peer is not replaced by a bot.
-- **Digests differ:** first compare ticks. Different ticks may have different valid states; F1 shows N/A instead of claiming a mismatch in that case.
+## 常见问题排查
 
-Credits and notices are in the package's `THIRD_PARTY_LICENSES.txt` and bundled server license files.
+- **找不到 Data 文件夹：** 复制或重新构建完整发行包；`LockstepArena_Data` 必须与游戏可执行文件放在一起，不能混用不同版本的文件。
+- **端口冲突 / 服务器无法启动：** 房主的 TCP **46000** 和 **46001** 端口必须可用。先关闭自己已知的旧服务器进程。**Create LAN** 不会擅自复用来源未知的监听端口，也不会结束手动启动的服务器。
+- **连接失败：** 检查房主当前有效的 IPv4，以及 Windows 专用网络对客户端和服务器的防火墙授权。**不要将这些端口直接暴露在公网。**
+- **无法开始游戏：** 房间必须有两名玩家且都已 **Ready**；只有房主能点击 **Start**。
+- **无法点击 Watch Replay：** 需要先完成整场比赛并通过结算验证；中断或未验证的比赛不会提供已验证回放。
+- **战斗时间线停住：** 服务器发布权威帧需要双方输入。保持两个客户端运行；虽然客户端支持后台网络推进，但离线或断开的玩家不会自动由机器人替代。
+- **两个 StateDigest 不同：** 首先检查比较的是不是**同一个 Tick**。不同 Tick 的有效状态也可能不同，F1 在无法直接比较时会显示 `N/A`，而不是错误声称发生失同步。
+
+资源版权与声明见发行包中的 `THIRD_PARTY_LICENSES.txt` 及服务器附带的运行时许可证文件。
