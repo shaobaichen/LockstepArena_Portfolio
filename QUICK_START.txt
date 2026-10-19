@@ -1,36 +1,37 @@
-LOCKSTEP ARENA - WINDOWS x64
+LOCKSTEP ARENA - WINDOWS x64 中文快速指南
 
-Keep this entire folder together. No Unity or .NET SDK is required.
+请保留整个游戏文件夹，不要只复制 LockstepArena.exe。
+普通玩家无需安装 Unity 或 .NET SDK。
 
-HOST
-1. Start LockstepArena.exe.
-2. Choose CREATE LAN.
-3. Enter nickname and room name; create the room.
-4. Share your active LAN IPv4 with the guest.
+【房主 HOST】
+1. 启动 LockstepArena.exe。
+2. 选择 CREATE LAN（创建局域网）。
+3. 输入昵称和房间名称，创建房间。
+4. 将房主当前有效的局域网 IPv4 地址告知另一名玩家。
 
-CLIENT
-1. Start LockstepArena.exe.
-2. Choose JOIN LAN.
-3. Enter a different nickname and Host IPv4.
-4. Select and join the room.
-5. Both players READY.
-6. Host START.
+【加入者 CLIENT】
+1. 启动另一份 LockstepArena.exe。
+2. 选择 JOIN LAN（加入局域网）。
+3. 输入不同的昵称以及房主 IPv4 地址。
+4. 从列表选择房间并加入。
+5. 两名玩家均点击 READY（准备）。
+6. 由房主点击 START（开始）。
 
-On one PC, run two copies and use 127.0.0.1.
-If Windows Firewall asks, allow Private Network access.
-Host TCP ports 46000 and 46001 must be available.
+同一台电脑可运行两份客户端，连接地址使用 127.0.0.1。
+如果 Windows 防火墙提示，请允许专用网络（Private Network）访问。
+房主的 TCP 端口 46000 和 46001 必须可用。
 
-CONTROLS
-WASD        Move
-Mouse       Aim
-Left Mouse  Fire (hold)
-F1          Diagnostics
+【游戏操作 CONTROLS】
+WASD          移动
+鼠标          瞄准
+按住鼠标左键  开火
+F1            显示/隐藏诊断面板
 
-REPLAY (after verified match result)
-WATCH REPLAY starts authoritative offline playback.
-SPACE       Pause / Resume
-ESC         Return to result
-Completed replay holds until BACK TO RESULT.
-RETURN TO LOBBY is a separate result action.
+【回放 REPLAY：需要先完成经过验证的比赛结算】
+WATCH REPLAY    开始离线权威帧回放
+SPACE           暂停 / 继续
+ESC             返回结算界面
+回放结束后保持最后一帧，点击 BACK TO RESULT 返回结算。
+RETURN TO LOBBY（返回大厅）是结算界面的独立操作。
 
-See THIRD_PARTY_LICENSES.txt and Server runtime notices.
+第三方资源及运行时声明见 THIRD_PARTY_LICENSES.txt 和 Server 文件夹内的许可证文件。
